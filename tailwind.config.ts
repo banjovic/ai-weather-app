@@ -88,12 +88,12 @@ const config: Config = {
         "tremor-default": "0.5rem",
         "tremor-full": "9999px",
       },
-      fontSize: {
-        "tremor-label": ["0.75rem"],
-        "tremor-default": ["0.875rem", { lineHeight: "1.25rem" }],
-        "tremor-title": ["1.125rem", { lineHeight: "1.75rem" }],
-        "tremor-metric": ["1.875rem", { lineHeight: "2.25rem" }],
-      },
+      // fontSize: {
+      //   "tremor-label": ["0.75rem"],
+      //   "tremor-default": ["0.875rem", { lineHeight: "1.25rem" }],
+      //   "tremor-title": ["1.125rem", { lineHeight: "1.75rem" }],
+      //   "tremor-metric": ["1.875rem", { lineHeight: "2.25rem" }],
+      // },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

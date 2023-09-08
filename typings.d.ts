@@ -8,16 +8,16 @@ interface CurrentWeather {
 }
 
 interface Daily {
-    sunrise: [string];
-    sunset: [string];
+    time: [string];
+    weathercode: [number];
     temperature_2m_max: [number];
     temperature_2m_min: [number];
-    time: [string];
-    uv_index_clear_sky_max: [number];
-    uv_index_max: [number];
-    weathercode: [number];
     apparent_temperature_max: [number]
     apparent_temperature_min: [number]
+    sunrise: [string];
+    sunset: [string];
+    uv_index_max: [number];
+    uv_index_clear_sky_max: [number];
 }
 
 interface DailyUnits {
@@ -34,17 +34,18 @@ interface DailyUnits {
 }
 
 interface Hourly {
-    apparent_temperature: [number];
-    dewpoint_2m: [number];
-    precipitation: [number];
-    precipitation_probability: [number];
-    rain: [number];
-    relativehumidity_2m: [number];
-    showers: [number];
-    snow_depth: [number];
-    snowfall: [number];
-    temperature_2m: [number];
     time: [string];
+    temperature_2m: [number];
+    relativehumidity_2m: [number];
+    dewpoint_2m: [number];
+    apparent_temperature: [number];
+    precipitation_probability: [number];
+    precipitation: [number];
+    rain: [number];
+    showers: [number];
+    snowfall: [number];
+    snow_depth: [number];
+    weathercode: [number];
     uv_index: [number];
     uv_index_clear_sky: [number];
     is_day: [number]
@@ -65,19 +66,20 @@ interface HourlyUnits {
     uv_index: string;
     uv_index_clear_sky: string;
     is_day: string
+    weathercode: string
 }
 
 interface Root {
-    current_weather: CurrentWeather;
-    daily: Daily;
-    daily_units: DailyUnits;
-    elevation: number;
-    generationtime_ms: number;
-    hourly: Hourly;
-    hourly_units: HourlyUnits;
     latitude: number;
     longitude: number;
+    generationtime_ms: number;
+    utc_offset_seconds: number;
     timezone: string;
     timezone_abbreviation: string;
-    utc_offset_seconds: number;
+    elevation: number;
+    current_weather: CurrentWeather;
+    hourly_units: HourlyUnits;
+    hourly: Hourly;
+    daily_units: DailyUnits;
+    daily: Daily;
 }

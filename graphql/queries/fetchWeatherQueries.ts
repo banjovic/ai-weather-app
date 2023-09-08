@@ -1,19 +1,19 @@
 import { gql } from '@apollo/client';
 
 const fetchWeatherQueries = gql`
-  query MyQuery(
+  query MyQuery (
     $current_weather: String
-    $daily: String = "apparent_temperature_max, apparent_temperature_min, sunrise, sunset, temperature_2m_max, temperature_2m_min, time, uv_index_clear_sky_max, uv_index_max, weathercode"
-    $hourly: String = "apparent_temperature, dewpoint_2m, is_day, precipitation, precipitation_probability, rain, relativehumidity_2m, showers, snow_depth, snowfall, temperature_2m, time, uv_index, uv_index_clear_sky"
+    $daily: String = "apparent_temperature_max,apparent_temperature_min,sunrise,sunset,temperature_2m_min,temperature_2m_max,time,uv_index_clear_sky_max,uv_index_max,weathercode"
+    $hourly: String = "apparent_temperature,dewpoint_2m,is_day,precipitation,precipitation_probability,rain,showers,relativehumidity_2m,snow_depth,snowfall,time,uv_index,temperature_2m,uv_index_clear_sky,weathercode"
     $latitude: String!
     $longitude: String!
     $timezone: String!
-  ){
+  )  {
     myQuery(
       current_weather: $current_weather
       daily: $daily
-      hourly: $hourly
       latitude: $latitude
+      hourly: $hourly
       longitude: $longitude
       timezone: $timezone
     ) {
@@ -21,8 +21,8 @@ const fetchWeatherQueries = gql`
         is_day
         temperature
         time
-        weathercode
         winddirection
+        weathercode
         windspeed
       }
       daily {
@@ -30,8 +30,8 @@ const fetchWeatherQueries = gql`
         apparent_temperature_min
         sunrise
         sunset
-        temperature_2m_max
         temperature_2m_min
+        temperature_2m_max
         time
         uv_index_clear_sky_max
         uv_index_max
@@ -40,14 +40,14 @@ const fetchWeatherQueries = gql`
       daily_units {
         apparent_temperature_max
         apparent_temperature_min
-        sunset
         sunrise
+        sunset
         temperature_2m_max
         temperature_2m_min
         time
         uv_index_clear_sky_max
-        uv_index_max
         weathercode
+        uv_index_max
       }
       elevation
       generationtime_ms
@@ -58,30 +58,32 @@ const fetchWeatherQueries = gql`
         precipitation
         precipitation_probability
         rain
-        relativehumidity_2m
         showers
+        relativehumidity_2m
         snow_depth
         snowfall
-        temperature_2m
         time
         uv_index
+        temperature_2m
         uv_index_clear_sky
+        weathercode
       }
       hourly_units {
         apparent_temperature
         dewpoint_2m
-        is_day
         precipitation
-        rain
+        is_day
         precipitation_probability
-        relativehumidity_2m
+        rain
         showers
+        relativehumidity_2m
         snow_depth
-        snowfall
         temperature_2m
         time
+        snowfall
         uv_index
         uv_index_clear_sky
+        weathercode
       }
       latitude
       longitude
