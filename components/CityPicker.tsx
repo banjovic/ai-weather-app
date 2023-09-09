@@ -148,7 +148,7 @@
 
 "use client";
 
-import { Country, State, City } from "country-state-city";
+import { Country, City } from "country-state-city";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Select from "react-select";
