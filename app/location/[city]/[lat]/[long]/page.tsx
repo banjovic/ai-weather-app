@@ -48,6 +48,8 @@ const WeatherPage = async ({ params: { city, lat, long } }: Props) => {
     }),
   });
 
+  console.log("object", getBasePath());
+
   const GPTdata = await res.json();
   const { content } = GPTdata;
 
