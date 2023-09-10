@@ -215,6 +215,8 @@ const CityPicker = (props: Props) => {
           value={selectedCountry}
           onChange={handleSelectedCountry}
           options={options}
+          id='country'
+          name='country'
         />
       </div>
 
@@ -222,7 +224,7 @@ const CityPicker = (props: Props) => {
         <div className='space-y-2'>
           <div className='flex items-center space-x-2 text-white/80'>
             <GlobeAltIcon className='h-5 w-5 text-white' />
-            <label htmlFor='country'>City</label>
+            <label htmlFor='city'>City</label>
           </div>
           <Select
             className='text-black'
@@ -240,6 +242,8 @@ const CityPicker = (props: Props) => {
               },
               label: city.name,
             }))}
+            id='city'
+            name='city'
           />
         </div>
       )}
